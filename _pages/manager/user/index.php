@@ -16,7 +16,7 @@
 
         ## HTML PAGE ##
         public function HTMLpage() {
-            manager::panel('<a href="'.func::link('edit', 0, $GLOBALS['MANAGER']->qsStr()).'" class="btn-insert btn" title="inserir">inserir usuário</a>');
+            manager::panel('<a href="'.func::link('edit', null, $GLOBALS['MANAGER']->qsStr()).'" class="btn-insert btn" title="inserir">inserir usuário</a>');
 
             if ($search = $GLOBALS['MANAGER']->getQsExtSQL('search')) {
                 $sql = 'SELECT SQL_CALC_FOUND_ROWS id, description, login FROM user WHERE id != 1 AND (description LIKE "%'.$search.'%" OR login LIKE "%'.$search.'%") '.$GLOBALS['MANAGER']->orderSql;
@@ -37,10 +37,10 @@
     <tbody>
         <? while($row = $rs->row()) { ?>
         <tr>
-            <td><a href="<?= func::link('edit/'.$row['id'], 0, $GLOBALS['MANAGER']->qsStr()) ?>" class="icon-change icon" title="Alterar">Alterar</a></td>
+            <td><a href="<?= func::link('edit/'.$row['id'], null, $GLOBALS['MANAGER']->qsStr()) ?>" class="icon-change icon" title="Alterar">Alterar</a></td>
             <td><?= func::row($row, 'description') ?></td>
             <td><?= func::row($row, 'login') ?></td>
-            <td><a href="<?= func::link('delete/'.$row['id'], 0, $GLOBALS['MANAGER']->qsStr()) ?>" class="icon-delete icon" title="Excluir">Excluir</a></td>
+            <td><a href="<?= func::link('delete/'.$row['id'], null, $GLOBALS['MANAGER']->qsStr()) ?>" class="icon-delete icon" title="Excluir">Excluir</a></td>
         </tr>
         <? } ?>
     </tbody>

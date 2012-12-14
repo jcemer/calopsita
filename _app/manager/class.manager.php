@@ -88,7 +88,7 @@
                 $direction = 'down';
             }
             $qs = $this->qsStrOrder().'&amp;order_field='.key($field).'&amp;order_order='.$order;
-            return '<a href="'.func::link('', 0, $qs).'" class="order '.$direction.'"><span>'.current($field).'</span></a>';
+            return '<a href="'.func::link('', null, $qs).'" class="order '.$direction.'"><span>'.current($field).'</span></a>';
         }
 
         // USER

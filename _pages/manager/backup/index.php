@@ -18,7 +18,7 @@
                 public function registre(){
                         $rs = DB::exec('SELECT date, user, size FROM backup ORDER BY date DESC LIMIT 3');
 ?>
-        <form action="<?= func::link('backup', 0) ?>" method="post" >
+        <form action="<?= func::link('backup') ?>" method="post" >
                 <div class="row">
                         <fieldset>
                                 <h4>Faça aqui o backup dos seus dados</h4>

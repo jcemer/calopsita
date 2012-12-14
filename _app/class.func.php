@@ -175,16 +175,18 @@
         }
 
         // LINK
-        public static function link($uri, $deep = 0, $qs = '', $url_rewrite = false){
+        public static function link($uri, $deep = null, $qs = '', $url_rewrite = false){
             $uri = trim($uri, '/');
             $path = $GLOBALS['PATH_PAGE'];
 
-            if ($deep === 0) {
+            if ($deep === null) {
                 $path = $GLOBALS['PATH_PAGE'];
             } else {
                 $path = array_slice($GLOBALS['PATH_PAGE'], 0, $deep);
             }
-            $uri = implode('/', $path).'/'.$uri;
+            if (!empty($path)) {
+                $uri = implode('/', $path).'/'.$uri;
+            }
 
             if (!URL_REWRITE && !$url_rewrite) {
                 return '?p='.strtolower($uri).($qs ? '&amp;'.$qs : '');

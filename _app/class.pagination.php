@@ -51,7 +51,7 @@
         // PRIVATE
 
         private function link($uri, $num, $qs = '') {
-            return $uri == '#/' ? '#' : func::link($uri.'/'.$num, 0, $qs);
+            return $uri == '#/' ? '#' : func::link($uri.'/'.$num, null, $qs);
         }
 
         private function paging_site($numPages, $initPages, $uri, $qs) {

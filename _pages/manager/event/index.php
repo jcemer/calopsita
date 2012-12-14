@@ -16,7 +16,7 @@
 
         ## HTML PAGE ##
         public function HTMLpage() {
-            manager::panel('<a href="'.func::link('edit', 0, $GLOBALS['MANAGER']->qsStr()).'" class="btn-insert btn">inserir evento</a>');
+            manager::panel('<a href="'.func::link('edit', null, $GLOBALS['MANAGER']->qsStr()).'" class="btn-insert btn">inserir evento</a>');
 
             if ($search = $GLOBALS['MANAGER']->getQsExtSQL('search')) {
                 $sql = 'SELECT SQL_CALC_FOUND_ROWS id, date, description, active FROM event WHERE description LIKE "%'.$search.'%" '.$GLOBALS['MANAGER']->orderSql;
@@ -38,11 +38,11 @@
     <tbody>
         <? while($row = $rs->row()) { ?>
         <tr>
-            <td><a href="<?= func::link('edit/'.$row['id'], 0, $GLOBALS['MANAGER']->qsStr()) ?>" class="icon-change icon" title="Alterar">Alterar</a></td>
+            <td><a href="<?= func::link('edit/'.$row['id'], null, $GLOBALS['MANAGER']->qsStr()) ?>" class="icon-change icon" title="Alterar">Alterar</a></td>
             <td class="date"><?= func::dt2br($row['date']) ?></td>
             <td class="description"><?= func::row($row, 'description') ?></td>
             <td><?= $row['active'] ? 'Sim' : '<strong>Não</strong>' ?></td>
-            <td><a href="<?= func::link('delete/'.$row['id'], 0, $GLOBALS['MANAGER']->qsStr()) ?>" class="icon-delete icon" title="Excluir">Excluir</a></td>
+            <td><a href="<?= func::link('delete/'.$row['id'], null, $GLOBALS['MANAGER']->qsStr()) ?>" class="icon-delete icon" title="Excluir">Excluir</a></td>
         </tr>
         <? } ?>
     </tbody>
