@@ -16,17 +16,17 @@ Configuração
 
 ### URL e hospedagem
 
-A hospedagem deve ter a reescrita de URL autorizada através do `mod_rewrite` do *Apache*.
+A hospedagem deve ter a reescrita de URL autorizada através do `mod_rewrite` do Apache (ou similiar). Caso contrário, você deve desabilitar a flag `URL_REWRITE` em **config**.
 
-Em `index.php` as constantes `PATH_INVALID` e `PATH_BASE_HREF` devem refletir o caminho e url respectivamente.
+Em **config** as constantes `PATH_INVALID` e `PATH_BASE_HREF` devem refletir o caminho e url respectivamente.
 
-O arquivo `htaccess` deve conter o caminho para o arquivo `index.php` incluíndo `PATH_INVALID`.
+O arquivo `htaccess` deve conter o caminho para o arquivo **config** incluíndo `PATH_INVALID`.
 
 ### Banco de dados
 
 O acesso é provido através da extensão de *PDO*. Você deve assegurar que sua hospedagem possua a interface para seu *SGBD* configurada.
 
-As informações para conexão estão detalhadas no arquivo `index.php`:
+As informações para conexão estão detalhadas no arquivo **config**:
 
 - `DB_CONN` - (true) framework deve conectar ao banco de dados por padrão?
 - `DB_DRIVER` - (mysql) qual o *SGBD*
