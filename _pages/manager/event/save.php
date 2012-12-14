@@ -50,7 +50,7 @@
         }
 
         ## SAVE AFTER ##
-        public function saveAfter($msg0, $msg1) {
+        public function saveAfter(&$msg0, &$msg1) {
             $msg0 .= manager::image($this->page_table, $this->page_id, false, $this->upload_img, array(
                 array('img0', '250', '250', 'ext'),
                 array('img1', '500', '500', 'ext')
