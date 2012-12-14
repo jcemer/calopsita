@@ -1,0 +1,9 @@
+body {
+    font-family: Palatino, "Palatino Linotype", Georgia,Times, "Times New Roman", serif;
+    margin: 40px 0;
+    text-align: center;
+    line-height: 2;
+}
+nav li {
+    list-style: none;
+}

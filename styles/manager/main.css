@@ -1,0 +1,685 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: #E8E8DC;
+    color: #353535;
+}
+body, td, th {
+    font: 11px/16px Verdana;
+}
+h1, h2, h3, h4 {
+    font-family: "Trebuchet MS", Verdana;
+}
+h1 {
+    display: block;
+    overflow: hidden;
+    text-indent: -9000px;
+}
+ul li {
+    list-style: none;
+}
+a {
+    color: #666;
+    outline: none;
+    text-decoration: none;
+}
+a:hover {
+    color: #4F4B4A;
+}
+
+.btn {
+    line-height: 26px;
+    height: 26px;
+    float: left;
+    margin-right: 8px;
+    padding: 0 7px 0 28px;
+    cursor: pointer;
+    color: #666;
+    font-size: 11px;
+
+    background: #DFDFD1 url(../../images/manager/icon.png) no-repeat;
+    box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.03);
+
+    border: 1px solid #EEE;
+    border-color: rgba(0, 0, 0, 0.05) rgba(0, 0, 0, 0.05) rgba(0, 0, 0, 0.1);
+    text-shadow: 2px 1px 2px rgba(0, 0, 0, .15);
+}
+.btn:hover {
+    background-color: #E8E8DC;
+}
+.btn:active {
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-insert { background-position: 0 0; }
+.btn-main { background-position: 0 -24px; }
+.btn-second { background-position: 0 -48px; }
+.btn-change { background-position: -200px -72px; }
+.btn-delete { background-position: -200px 0; }
+.btn-up { background-position: -200px -24px; }
+.btn-down { background-position: -200px -48px; }
+.btn-simple { background-image: none; padding-left: 7px; }
+
+a.icon {
+    width: 52px;
+    height: 28px;
+    display: block;
+    overflow: hidden;
+    text-indent: -9000px;
+    background-image: url(../../images/manager/icon.png);
+}
+.icon-change { background-position: 0 -72px; }
+.icon-change:hover { background-position: 0 -100px; }
+.icon-delete { background-position: -52px -72px; }
+.icon-delete:hover { background-position: -52px -100px; }
+.icon-view { background-position: -104px -72px; }
+.icon-view:hover { background-position: -104px -100px; }
+
+/* FORM */
+fieldset {
+    border: none;
+}
+span.label, label {
+    margin-bottom: 2px;
+    cursor: pointer;
+    display: block;
+}
+.field {
+    height: 1.2em;
+    font: 13px/1.2em "Trebuchet MS";
+    color: #333;
+    border: none;
+    border-top: 1px solid #DFDFD1;
+    border-left: 1px solid #DFDFD1;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, .05);
+    background: white;
+}
+.field:focus {
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .05);
+}
+
+/* UI */
+.ui-widget-header {
+    background: url(../../images/manager/bg-title.png) 0 -8px;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    background: url(../../images/manager/bg-table.png);
+}
+
+/* INNER */
+#top .inner,
+#main .inner {
+    width: 960px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/*
+    TOP
+*/
+#top {
+    height: 60px;
+    position: absolute; top: 0; left: 0; right: 0;
+    z-index: 5;
+    padding: 10px 0 30px 0;
+    background: url(../../images/manager/bg-top.png);
+}
+#top h1,
+#top h1 a {
+    width: 160px;
+    display: block;
+    height: 60px;
+}
+#top h1 {
+    float: left;
+    background: url(../../images/manager/logo.png);
+}
+#top h2 {
+    display: none;
+}
+#top .navigation {
+    float: right;
+    margin-top: 14px;
+}
+#top .navigation a {
+    line-height: 26px;
+    float: left;
+    margin-left: 10px;
+    padding: 0 8px;
+    background: #555;
+    color: #CCC;
+    font-weight: bold;
+
+    border: 1px solid #333;
+    border-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.24);
+
+    text-shadow: 2px 1px 2px rgba(0, 0, 0, .15);
+}
+#top .navigation a:hover {
+    background: #888;
+}
+#top .navigation a:active {
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+/*
+    MAIN
+*/
+#main {
+    height: 100%;
+    position: relative;
+    overflow-y: scroll;
+    z-index: 3;
+}
+#container {
+    overflow: hidden;
+}
+
+/*
+    MENU, CONTENT
+*/
+#menu,
+#content {
+    float: left;
+    display: inline; /* ie hack */
+}
+
+/*
+    MENU
+*/
+#menu {
+    width: 160px;
+    margin-top: 100px;
+    margin-right: 20px;
+}
+#menu h2,
+#menu li {
+    margin-bottom: 2px;
+}
+#menu h2 {
+    height: 35px;
+    line-height: 33px;
+    background: url(../../images/manager/bg-menu.png);
+    text-transform: uppercase;
+    font-size: 13px;
+    text-indent: 10px;
+    text-shadow: 2px 1px 2px rgba(0, 0, 0, .1);
+}
+#menu .btn-simple {
+    margin-bottom: 0;
+}
+#menu ul {
+    margin-bottom: 20px;
+}
+#menu ul:after {
+    content: '';
+    display: block;
+    height: 4px;
+    line-height: 4px;
+    background: url(../../images/manager/bg-menu.png) 0 -30px;
+}
+
+#menu .info {
+    background: #EFEFE6;
+    padding: 5px;
+    margin-bottom: 2px;
+    overflow: hidden;
+    color: #AAA;
+}
+#menu .info p {
+    line-height: 16px;
+    padding-bottom: 4px;
+}
+#menu .info.active {
+    color: #535F00;
+    background: #DADFB5;
+}
+#menu .info.empty {
+    color: #900;
+}
+
+#menu li a {
+    width: 160px; /* ie hack */
+    line-height: 26px;
+    display: block;
+    background: #DFDFD1;
+    color: #746C69;
+    text-indent: 10px;
+}
+#menu li a:hover {
+    background: #EFEFE6;
+    color: #4F4B4A;
+}
+#menu li.select a {
+    background: #E8E8DC url(../../images/manager/icon.png) right -72px;
+}
+
+#menu .add h2 {
+    color: #FFF;
+    text-shadow: 2px 1px 2px rgba(0, 0, 0, .4);
+    background-position: 0 -35px;
+}
+#menu .add ul:after {
+    background-position: 0 -65px;
+}
+
+/*
+    CONTENT
+*/
+#content {
+    width: 780px;
+    margin-top: 100px;
+}
+#content h2 {
+    height: 55px;
+    line-height: 52px;
+    font-size: 30px;
+    letter-spacing: -2px;
+    text-shadow: 2px 1px 2px rgba(0, 0, 0, .1);
+    text-indent: 15px;
+    background: url(../../images/manager/bg-title-content.png);
+}
+#content p.error {
+    color: #900;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 20px 0 170px 0;
+    text-align: center;
+}
+#content #msg0,
+#content #msg1,
+#registre #editMsg ul {
+    margin-top: 20px;
+}
+#content #msg0 ul,
+#content #msg1 ul,
+#registre #editMsg ul {
+    padding: 15px 20px;
+}
+#content #msg0 ul li
+#content #msg1 ul li
+#registre #editMsg ul li {
+    line-height: 20px;
+}
+#content #msg0 ul,
+#registre #editMsg ul {background: #FFD2D2; color: #900}
+#content #msg1 ul {background: #DADFB5; color: #535F00}
+
+#index #content #msg1 {
+    height: 50px;
+    text-align: center;
+}
+
+/*
+    PANEL
+*/
+#panel {
+    height: 35px; /*Opera*/
+    margin-top: 20px;
+}
+#panel strong {
+    font-size: 14px;
+    line-height: 32px;
+}
+/* ICONS */
+#panel .icons {
+    width: 550px;
+    float: left;
+}
+#panel .icons .btn-insert {
+    margin-right: 25px;
+    font-weight: bold;
+}
+
+/* SEARCH */
+#panel .search {
+    float: right;
+}
+#panel .search .field {
+    width: 120px;
+    float: left;
+    padding: 5px 5px 5px 25px;
+    background-image: url(../../images/manager/icon.png);
+    background-position: 0 -200px;
+}
+#panel .search .btn {
+    margin: 0;
+    padding-left: 7px;
+    background-image: none;
+}
+
+/*
+    ROLL
+*/
+.roll {
+    width: 780px;
+    border-bottom: 2px solid #DFDFD1;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+#registre fieldset .roll {
+    margin: 0 0 15px 15px;
+    width: 350px;
+}
+.roll th {
+    line-height: 28px;
+    border-bottom: 2px solid #DFDFD1;
+    color: #666;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+}
+.roll th.icon {
+    width: 60px;
+}
+.roll td {
+    padding: 6px 2px;
+    text-align: center;
+    background: #E8E8DC;
+}
+.roll tr:nth-child(2n - 1) td {
+    background: #EFEFE6;
+}
+
+/* ORDER */
+.roll a.order {display: block}
+.roll a.order:hover {color: #999}
+.roll a.order span {
+    padding-right: 16px;
+    background: url(../../images/manager/icon.png) no-repeat;
+}
+.roll a.down span {background-position: right 0}
+.roll a.downOK span {background-position: right -12px}
+.roll a.upOK span {background-position: right -24px}
+
+/* ICONS */
+.roll td .icon {
+    margin: auto;
+}
+
+/*
+    REGISTRE
+*/
+
+/* GRID */
+#registre .row {
+    overflow: hidden;
+    margin-left: -20px;
+}
+
+#registre fieldset {
+    width: 380px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+    background: #EFEFE6;
+}
+
+/* INDEX */
+#index #content {
+    width: 300px;
+    margin-left: 330px;
+}
+#index #registre fieldset {
+    width: 300px;
+    padding: 20px 0;
+    float: none;
+}
+#index #registre p {
+    padding-left: 42px;
+}
+
+/* ALL */
+#registre h3 {
+    line-height: 40px;
+    margin-top: 20px;
+    background: url(../../images/manager/bg-title.png);
+    color: #FFF;
+    font-size: 16px;
+    font-weight: normal;
+    text-indent: 15px;
+    text-shadow: 2px 1px 2px rgba(0, 0, 0, .2);
+}
+#registre h4 {
+    line-height: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #DFDFD1;
+    background: #E8E8DC;
+    color: #666;
+    font-size: 15px;
+}
+#registre h4 ~ h4 {padding-top: 20px}
+
+#registre hr {
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 2px solid #E8E8DC;
+}
+#registre p {
+    padding: 0 15px 15px 15px;
+}
+#registre p.icons {height: 39px}
+#registre #images li {
+    position: relative;
+    width: 330px; /* ie hack */
+}
+#registre label span,
+#registre span.label span {
+    color: #8F8F8F;
+}
+#registre .field {
+    padding: 4px 3px;
+}
+#registre #date.field, #registre .date.field, #registre .time.field {
+    width: 84px;
+    padding-left: 23px;
+    background-image: url(../../images/manager/icon.png);
+    background-position: -200px -200px;
+}
+#registre .time.field {
+    width: 45px;
+    background-position: 0 -230px;
+}
+#registre .field-error {
+    background: #FFD2D2;
+}
+#registre .field-file {
+    width: 330px;
+}
+#registre select.field {
+    height: auto;
+    padding: 0;
+}
+#registre span.field {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+#registre .gg {width: 340px; }
+#registre textarea.gg {height: 400px; }
+#registre select.gg {width: 336px; }
+#registre .g {width: 200px; }
+#registre .m {width: 155px; }
+#registre .mp , #registre .date {width: 90px; }
+#registre .p {width: 30px; }
+#registre .pp {width: 20px; }
+
+#registre span.legend {
+    line-height: 26px;
+    margin-left: 5px;
+    float: left;
+    font-size: 13px;
+}
+
+#registre .modular {
+    overflow: hidden;
+}
+#registre .side {
+    float: left;
+    padding-right: 0;
+}
+#registre .side.m {width: 161px}
+#registre .side.mp {width: 96px}
+#registre .side.p {width: 36px}
+
+#registre input[type=checkbox] {
+    vertical-align: middle;
+}
+#registre input[type=checkbox] + label {
+    display: inline;
+    vertical-align: middle;
+    margin-left: 4px;
+}
+#registre p.footer {
+    height: 50px;
+    margin-top: 30px;
+    padding: 0;
+    border-top: 2px solid #DFDFD1;
+    background: #E8E8DC;
+}
+#registre fieldset p.footer {
+    margin: 0;
+}
+#registre p.footer button {
+    float: right;
+    height: 40px;
+    margin: 5px 0 0 4px;
+    font-size: 16px;
+}
+#registre p.footer .btn {
+    background-position: -196px -98px;
+    color: #529214;
+}
+#registre p.footer .btn:hover {
+    background-color: #E6EFC2;
+    border-bottom-color: #C7CFA8;
+}
+
+#registre .image-warning {
+    position: relative;
+    z-index: 1;
+}
+#registre .image-warning span {
+    background: #FFF;
+    display: block;
+    left: 25px;
+    padding: 6px;
+    position: absolute;
+    top: 10px;
+}
+#image-fields div,
+#file-fields div {
+    border-top: 5px solid #E8E8DC;
+    padding-top: 10px;
+}
+#image-fields div#image-field,
+#file-fields div#file-field {
+    border: none;
+    margin: 0;
+}
+#registre .image,
+#registre .file {
+    margin: 25px;
+    overflow: hidden;
+}
+#registre .image img {
+    float: left;
+}
+#registre .image .icons,
+#registre .file .icons {
+    float: left;
+    margin-left: 10px;
+}
+#registre .image .icon,
+#registre .file .icon {
+    margin: 0 0 10px 10px;
+}
+#registre span.info {
+    background: rgba(255, 255, 255, 0.8);
+    color: #666;
+    padding: 0 2px;
+}
+#registre .file .info {
+    float: left;
+    width: 200px;
+}
+#registre .file .icons {
+    width: 110px;
+}
+#registre .image-delete,
+#registre .file-delete {
+    background: url(../../images/manager/bg-image-delete.png) 0 0 no-repeat;
+}
+#registre .image-delete img {
+    opacity: .30;
+}
+
+/* WAIT */
+#wait {
+    padding: 100px 0;
+    text-align: center;
+}
+
+/*
+    NAVIGATION & PAGINATION
+*/
+#navigation {
+    height: 30px;
+    margin-top: 40px;
+}
+
+#navigation .btn-back { background-position: 0 -125px; padding-left: 20px; }
+#navigation .btn-top { background-position: 0 -165px; padding-left: 20px; }
+#navigation .btn-simple { margin-left: 12px; };
+
+#navigation .btn-prev { background-position: 0 -125px; }
+#navigation .btn-next { background-position: right -125px; }
+#navigation .btn-first { background-position: 0 -145px; }
+#navigation .btn-last { background-position: right -145px; }
+
+#navigation #pagination {
+    float: right;
+    text-align: right;
+}
+#navigation #pagination * {
+    margin-left: 4px;
+}
+#navigation #pagination span {
+    background: #5F5F5F;
+    color: #FFF;
+    font-weight: bold;
+}
+#navigation #pagination a.iNext,
+#navigation #pagination a.iLast {
+    padding-left: 7px;
+    padding-right: 20px;
+}
+
+/*
+    FOOTER
+*/
+#footer {
+    height: 58px;
+}
+#footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 3px solid #DFDFD1;
+}
+#footer address {
+    float: left;
+    font-style: normal;
+}
+#footer a {
+    float: right;
+}

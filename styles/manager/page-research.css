@@ -1,0 +1,94 @@
+#research-util {
+    width: 780px !important;
+}
+#research-util .question ~ .question h4 {
+    padding-top: 20px;
+}
+#research-util .question-off, #research-util .item-off {
+    display: inline;
+    background: #900;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+#research-util .question .field,
+body #research-util .question .itens .field {
+    background: #FFD2D2;
+    opacity: .2;
+}
+#research-util .field-question {
+    width: 742px;
+    display: inline-block;
+    vertical-align: top;
+}
+#research-util .itens .item-off {
+    display: inline-block;
+    width: 56px;
+    padding: 0;
+    line-height: 24px;
+    text-align: center;
+}
+#research-util .itens .field-question {
+    width:640px;
+}
+#research-util .icon-delete {
+    float: right;
+    margin: -2px -15px 0 0;
+}
+#research-util p {
+    overflow: hidden;
+}
+#research-util .btn {
+    float: none;
+}
+#research-util .btn-delete {
+    float: right;
+    margin-right: 0;
+}
+#research-util .btn-delete .active {
+    display: none;
+}
+
+#research-util .btn-simple {
+    margin: 0 0 15px 15px;
+}
+#research-util ~ .btn-add {
+    float: none;
+    margin: 20px;
+}
+#research-util .itens {
+    display: none;
+}
+#research-util .itens.active {
+    display: block;
+}
+#research-util .itens .title {
+    display: block;
+    border-top: 2px solid #DFDFD1;
+    margin: 0 15px 15px 15px;
+    padding: 7px 0 0 0;
+    font: bold 14px/18px "Trebuchet MS", Verdana;
+    color: #666;
+}
+
+/* ACTIVE */
+#research-util .question.active .question-off {
+    display: none;
+}
+#research-util .question.active .field,
+body #research-util .question.active p.active .field {
+    background: white;
+    opacity: 1;
+}
+#research-util .question.active .btn-delete .off {
+    display: none;
+}
+#research-util .question.active .btn-delete .active {
+    display: block;
+}
+#research-util .itens p.active .item-off {
+    display: none;
+}
+#research-util .itens p.active .field-question {
+    width: 700px;
+}

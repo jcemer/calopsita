@@ -1,0 +1,117 @@
+/*
+ * jQuery UI CSS Framework 1.8.7
+ *
+ * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Theming/API
+ */
+
+
+/* Component containers
+----------------------------------*/
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button{font:13px "Trebuchet MS"}
+.ui-widget-content{
+        background:#FFF;
+        border-bottom:2px solid #999;
+        margin-top:2px;
+        color:#666;
+}
+.ui-widget-content a{color:#222}
+.ui-widget-header{
+        color:#FFF;
+        font:bold 13px/26px "Trebuchet MS", Verdana;
+        height:28px;
+        margin:-4px;
+}
+
+/* Interaction states
+----------------------------------*/
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus{
+        background:#DFDFD1;
+}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
+        background:#FFF;
+}
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active{
+        background:#EDBE00;
+        color:#FFF;
+}
+.ui-priority-secondary, .ui-widget-content .ui-priority-secondary,  .ui-widget-header .ui-priority-secondary {
+        opacity:.4;
+        filter:Alpha(Opacity=40);
+}
+.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled {
+        opacity:.2;
+        filter:Alpha(Opacity=20);
+}
+
+/* Misc visuals
+----------------------------------*/
+/* Overlays */
+.ui-datepicker{
+        width:200px;
+        padding:4px;
+        display:none;
+}
+.ui-datepicker .ui-datepicker-header{
+        position:relative;
+        padding:2px 0;
+}
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next{
+        display:block;
+        cursor:pointer;
+        position:absolute; top:0;
+        color:#A0A092;
+        width:20px;
+        text-align:center;
+}
+.ui-datepicker .ui-datepicker-prev{left:0}
+.ui-datepicker .ui-datepicker-next{right:0}
+.ui-widget-header .ui-state-hover{
+        background:none;
+        color:#FFF;
+}
+
+.ui-datepicker .ui-datepicker-title{text-align:center}
+.ui-datepicker table{
+        width:100%;
+        border-collapse:collapse;
+}
+.ui-datepicker th{
+        padding:7px 3px 4px 3px;
+        text-align:center;
+        font:bold 10px/14px "Trebuchet MS", Verdana;
+}
+.ui-datepicker td{padding:1px}
+.ui-datepicker td span, .ui-datepicker td a{
+        display:block;
+        padding:2px;
+        text-align:right;
+}
+
+/* with multiple calendars */
+.ui-datepicker.ui-datepicker-multi{width:auto}
+.ui-datepicker-multi .ui-datepicker-group{float:left}
+.ui-datepicker-multi .ui-datepicker-group table{width:95%; margin:0 auto .4em}
+.ui-datepicker-multi-2 .ui-datepicker-group{width:50%}
+.ui-datepicker-multi-3 .ui-datepicker-group{width:33.3%}
+.ui-datepicker-multi-4 .ui-datepicker-group{width:25%}
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header{border-left-width:0}
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header{border-left-width:0}
+.ui-datepicker-multi .ui-datepicker-buttonpane{clear:left}
+.ui-datepicker-row-break{clear:both; width:100%}
+
+/* IE6 IFRAME FIX (taken from datepicker 1.5.3 */
+.ui-datepicker-cover{
+    display: none; /*sorry for IE5*/
+    display/**/: block; /*sorry for IE5*/
+    position: absolute; /*must have*/
+    z-index: -1; /*must have*/
+    filter: mask(); /*must have*/
+    top: -4px; /*must have*/
+    left: -4px; /*must have*/
+    width: 200px; /*must have*/
+    height: 200px; /*must have*/
+}

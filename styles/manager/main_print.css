@@ -1,0 +1,34 @@
+body, html{
+        width:auto;
+        height:auto;
+        overflow:visible;
+}
+#main{
+        height:auto;
+        overflow-y:visible;
+}
+#top, #pad, #menu, a{
+        display:none;
+}
+h2, h3{
+        display:none;
+}
+#registre p.footer, #navigation{
+        display:none;
+}
+#registre p{
+        height:40px;
+}
+#registre .field{
+        margin-top:0;
+}
+.photo0{
+        display:none;
+}
+
+#navigation, #footer{
+        display:none;
+}
+
+#purchase .middle .description{margin:0}
+#purchase .middle td{border-bottom:1px solid #CCC}

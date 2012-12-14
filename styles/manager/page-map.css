@@ -1,0 +1,28 @@
+#registre #map_canvas {
+    height: 300px;
+    margin: 20px 0 0 20px;
+}
+#registre .row .btn {
+    height: 24px;
+    line-height: 24px;
+    float: none;
+    vertical-align: middle;
+}
+#registre #address-error span {
+    display: block;
+    background: #FFD2D2;
+    padding: 4px;
+    margin-bottom: 4px;
+}
+#registre #address {
+    width: 250px;
+    vertical-align: middle;
+}
+#registre #address_lng {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+#registre #text {
+    height: 300px;
+    resize: vertical;
+}
